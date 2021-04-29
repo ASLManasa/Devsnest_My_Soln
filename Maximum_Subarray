@@ -1,0 +1,21 @@
+/*Kadanes Algorithm*/
+class Solution 
+{
+    public int maxSubArray(int[] nums) 
+    {
+        int length = nums.length;
+        int max = Integer.MIN_VALUE;
+        int max_end =0;
+        for(int i =0;i<nums.length;i++)
+        {
+            max_end = max_end+nums[i];
+            if(max < max_end)
+                max = max_end;
+            if(max_end < 0)
+                 max_end =0;
+                    
+        }
+        return max;
+        
+    }
+}
